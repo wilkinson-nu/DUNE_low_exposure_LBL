@@ -1,0 +1,50 @@
+\RequirePackage{lineno}
+\documentclass[aps,prd,twocolumn,showpacs,superscriptaddress,nofootinbib,floatfix,letterpaper]{revtex4-1}
+\pdfoutput=1
+\usepackage{placeins}
+\usepackage{multirow}
+\usepackage[utf8]{inputenc}
+\usepackage{color}
+\input{common/preamble.tex}
+
+%% To make references display as, e.g. [1-3], not [1,2,3]
+% \usepackage{cite}
+
+\newcommand{\todo}[1]{\textcolor{blue}{#1}}
+\newcommand\addcite{[{\color{blue} \underline{CITATION NEEDED}}]~}
+\def\bracketbar{\hbox{\kern-9pt\raise1pt%
+    \hbox{{\tiny(}{\lower1.5pt\hbox{\bf--}}{\tiny)}}}}
+
+\begin{document}
+
+\title{Long-baseline neutrino oscillation physics potential of the DUNE experiment}
+\date{\today}
+\collaboration{DUNE Collaboration}
+\noaffiliation
+% \input{sections/author_list}
+
+\begin{abstract}
+Add something...
+  %The sensitivity of the Deep Underground Neutrino Experiment (DUNE) to neutrino oscillation is determined, based on a full simulation, reconstruction, and event selection of the far detector and a full simulation and parameterized analysis of the near detector. Detailed uncertainties due to the flux prediction, neutrino interaction model, and detector effects are included. DUNE will resolve the neutrino mass ordering to a precision of 5$\sigma$, for all \deltacp values, after 2 years of running with the nominal detector design and beam configuration. It has the potential to observe charge-parity violation in the neutrino sector to a precision of 3$\sigma$ (5$\sigma$) after an exposure of 5 (10) years, for 50\% of all \deltacp values. It will also make precise measurements of other parameters governing long-baseline neutrino oscillation, and after an exposure of 15 years will achieve a similar sensitivity to $\sin^{2} 2\theta_{13}$ to current reactor experiments.
+\end{abstract}
+
+\maketitle
+
+%% Rationalise the structure a bit
+\input{sections/introduction}
+\input{sections/analysis_framework}
+% \input{sections/flux}
+% \input{sections/nuint}
+% \input{sections/nd}
+% \input{sections/fd}
+\input{sections/rate}
+% \input{sections/syst}
+% \input{sections/methods}
+\input{sections/run_plan_opt}
+\input{sections/low_exp_sens}
+\input{sections/conclusion}
+\input{sections/acknowledgements}
+\bibliographystyle{utphys}
+\bibliography{common/tdr-citedb}
+
+\end{document}
