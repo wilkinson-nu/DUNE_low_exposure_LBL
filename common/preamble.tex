@@ -1,0 +1,18 @@
+% stuff before document begins.  
+
+\RequirePackage[detect-all=true,group-digits=true,group-separator={,},binary-units=true]{siunitx}
+\RequirePackage{xspace}
+\RequirePackage{graphicx}
+%\usepackage[pdftex,bookmarks,hidelinks, draft]{hyperref}
+\usepackage[pdftex,bookmarks,hidelinks]{hyperref}
+
+\graphicspath{ {graphics/} }
+\input{common/defs.tex}
+\input{common/units.tex}
+
+% For glossaries, needs to be loaded *after* hyperref to get clickable links.
+\input{common/glossary}
+
+
+
+
