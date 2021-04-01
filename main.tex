@@ -5,11 +5,44 @@
 \usepackage{multirow}
 \usepackage[utf8]{inputenc}
 \usepackage{color}
-\input{common/preamble.tex}
 \usepackage[caption=false]{subfig}
+\RequirePackage[detect-all=true,group-digits=true,group-separator={,},binary-units=true]{siunitx}
+\RequirePackage{xspace}
+\RequirePackage{graphicx}
+\usepackage[pdftex,bookmarks,hidelinks]{hyperref}
 
-%% To make references display as, e.g. [1-3], not [1,2,3]
-% \usepackage{cite}
+\graphicspath{ {graphics/} }
+
+\newcommand{\numu}{\ensuremath{\nu_\mu}\xspace}
+\newcommand{\nue}{\ensuremath{\nu_e}\xspace}
+\newcommand{\nutau}{\ensuremath{\nu_\tau}\xspace}
+\newcommand{\anumu}{\ensuremath{\bar\nu_\mu}\xspace}
+\newcommand{\anue}{\ensuremath{\bar\nu_e}\xspace}
+\newcommand{\anutau}{\ensuremath{\bar\nu_\tau}\xspace}
+
+\newcommand{\dm}[1]{\ensuremath{\Delta m^2_{#1}}\xspace} % example: \dm{12}
+\newcommand{\sinst}[1]{\ensuremath{\sin^2\theta_{#1}}\xspace} % example \sinst{12}
+\newcommand{\sinstt}[1]{\ensuremath{\sin^22\theta_{#1}}\xspace}  % example \sinstt{12}
+\newcommand{\deltacp}{\ensuremath{\delta_{\rm CP}}\xspace}   % example \deltacp
+
+\newcommand{\numutonumu}{\nuxtonux{\mu}{\mu}}
+\newcommand{\numutonue}{\nuxtonux{\mu}{e}}
+
+\newcommand{\numubartonumubar}{
+\ensuremath{\overline{\numu}\rightarrow\overline{\numu}}\xspace
+}
+
+\newcommand{\numubartonuebar}{
+\ensuremath{\overline{\numu}\rightarrow\overline{\nue}}\xspace
+}
+\def\fdfiducialmass{\SI{40}{\kt}\xspace}
+\def\nominalmodsize{\SI{10}{kt}\xspace} % nominal module size 10 kt
+
+\DeclareSIUnit \kt {\kilo\tonne}
+
+% For glossaries, needs to be loaded *after* hyperref to get clickable links.
+\input{common/glossary}
+
 
 \newcommand{\todo}[1]{\textcolor{blue}{#1}}
 \newcommand\addcite{[{\color{blue} \underline{CITATION NEEDED}}]~}
