@@ -10,6 +10,7 @@
 \RequirePackage{xspace}
 \RequirePackage{graphicx}
 \usepackage[pdftex,bookmarks,hidelinks]{hyperref}
+\usepackage{amsmath}
 
 \graphicspath{ {graphics/} }
 
@@ -25,8 +26,8 @@
 \newcommand{\sinstt}[1]{\ensuremath{\sin^22\theta_{#1}}\xspace}  % example \sinstt{12}
 \newcommand{\deltacp}{\ensuremath{\delta_{\rm CP}}\xspace}   % example \deltacp
 
-\newcommand{\numutonumu}{\nuxtonux{\mu}{\mu}}
-\newcommand{\numutonue}{\nuxtonux{\mu}{e}}
+\newcommand{\numutonumu}{\ensuremath{\numu\rightarrow\numu}\xspace}
+\newcommand{\numutonue}{\ensuremath{\numu\rightarrow\nue}\xspace}
 
 \newcommand{\numubartonumubar}{
 \ensuremath{\overline{\numu}\rightarrow\overline{\numu}}\xspace
@@ -35,18 +36,10 @@
 \newcommand{\numubartonuebar}{
 \ensuremath{\overline{\numu}\rightarrow\overline{\nue}}\xspace
 }
-\def\fdfiducialmass{\SI{40}{\kt}\xspace}
-\def\nominalmodsize{\SI{10}{kt}\xspace} % nominal module size 10 kt
-
-\DeclareSIUnit \kt {\kilo\tonne}
-
-% For glossaries, needs to be loaded *after* hyperref to get clickable links.
-\input{common/glossary}
-
 
 \newcommand{\todo}[1]{\textcolor{blue}{#1}}
 \newcommand\addcite{[{\color{blue} \underline{CITATION NEEDED}}]~}
-\def\bracketbar{\hbox{\kern-9pt\raise1pt%
+\def\bracketbar{\hbox{\kern-8pt\raise1pt%
     \hbox{{\tiny(}{\lower1.5pt\hbox{\bf--}}{\tiny)}}}}
 \newcommand{\dchisq}{\ensuremath{\Delta\chi^{2}}\xspace}
 \newcommand{\dchisqcrit}{\ensuremath{\Delta\chi^{2}_{c}}\xspace}
@@ -69,13 +62,7 @@ Add something...
 %% Rationalise the structure a bit
 \input{sections/introduction}
 \input{sections/analysis_framework}
-% \input{sections/flux}
-% \input{sections/nuint}
-% \input{sections/nd}
-% \input{sections/fd}
 \input{sections/rate}
-% \input{sections/syst}
-% \input{sections/methods}
 \input{sections/run_plan_opt}
 \input{sections/cp_sens}
 \input{sections/mh_sens}
