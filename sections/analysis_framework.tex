@@ -1,5 +1,5 @@
-\section{Analysis framework}\label{sec:analysis_framework}
-
+\section{Analysis framework}
+\label{sec:analysis_framework}
 This work uses the flux, neutrino interaction and detector model described in detail in Ref.~\cite{Abi:2020qib}, implemented in the CAFAna framework~\cite{CAFAna}. This section provides an overview of the key analysis features. Further details on all aspects can be found in Ref.~\cite{Abi:2020qib}.
 
 %% Flux in brief
@@ -41,15 +41,34 @@ In addition to impacting energy reconstruction, the E-field model also affects t
 
 The FD is sufficiently large that acceptance is not expected to vary significantly as a function of event kinematics. However, the ND acceptance does vary as a function of both muon and hadronic kinematics due to various containment criteria. Uncertainties are evaluated on the muon and hadron acceptance at the ND based on the change in the acceptance as a function of muon kinematics and true hadronic energy.
 
-%The response of the detector to neutrons is a source of active study and will couple strongly to detector technology. The validation of neutron interactions in LAr will continue to be characterized by dedicated measurements (e.g., CAPTAIN~\cite{Berns:2013usa,Bhandari:2019rat}) and the LAr program (e.g., ArgoNeut~\cite{Acciarri:2018myr}).  However, the association of the identification of a neutron scatter or capture to the neutron's true energy has not been demonstrated, and significant reconstruction issues exist, so a large uncertainty (20\%) is assigned comparable to the observations made by MINERvA~\cite{Elkins:2019vmy} assuming they are attributed entirely to the detector model. Selection of photon candidates from $\pi^0$ is also a significant reconstruction challenge, but a recent measurement from MicroBooNE indicates this is possible and the reconstructed $\pi^0$ invariant mass has an uncertainty of 5\%, although with some bias~\cite{Adams:2018sgn}.
-
 %% Sensitivity method
 \subsection{Sensitivity Methods}
 Systematics are implemented in the analysis using one-dimensional response functions for each analysis bin, and oscillation weights are calculated exactly, in fine (50 MeV) bins of true neutrino energy. For a given set of inputs, flux, oscillation parameters, cross sections, detector energy response matrices, and detector efficiency, an expected event rate can be produced. Minimization is performed using the {\sc minuit}~\cite{James:1994vla} package.
 
-Oscillation sensitivities are obtained by simultaneously fitting the \numutonumu, $\bar{\nu}_\mu \rightarrow \bar{\nu}_\mu$ (Figure~\ref{fig:disspectra}), \numutonue, and $\bar{\nu}_\mu \rightarrow \bar{\nu}_e$ (Figure~\ref{fig:appspectra}) FD spectra along with the $\nu_{\mu}$ FHC and $\bar{\nu}_{\mu}$ RHC samples from the ND (Figure~\ref{fig:nd_samples}). In the studies, all oscillation parameters shown in Table~\ref{tab:oscpar_nufit} are allowed to vary. Gaussian penalty terms (taken from Table~\ref{tab:oscpar_nufit}) are applied to $\theta_{12}$ and \dm{12} and the matter density, $\rho$, of the Earth along the DUNE baseline~\cite{Roe:2017zdw}. Unless otherwise stated, studies presented here include a Gaussian penalty term on $\theta_{13}$ (also taken from Table~\ref{tab:oscpar_nufit}), which is precisely measured by experiments sensitive to reactor antineutrino disappearance~\cite{Abe:2014bwa,Adey:2018zwh,Bak:2018ydk}. The remaining parameters, \sinst{23}, $\Delta m^{2}_{32}$, and \deltacp are allowed to vary freely, with no penalty term. Note that the penalty terms are treated as uncorrelated with each other, or other parameters, which is a simplification. In particular, the reactor experiments that drive the constraint on $\theta_{13}$ in the NuFIT 4.0 analysis are also sensitive to \dm{32}, so the constraint on $\theta_{13}$ should be correlated with \dm{32}. We do not expect this to have a significant impact on the fits, and this effect only matters for those results with the $\theta_{13}$ Gaussian penalty term included.
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{lcc}
+      \hline
+      Parameter &    Central value & Relative uncertainty \\
+      \hline\hline
+      $\theta_{12}$ & 0.5903 & 2.3\% \\ \hline
+      $\theta_{23}$ (NO) & 0.866  & 4.1\% \\ 
+      $\theta_{23}$ (IO) & 0.869  & 4.0\% \\ \hline
+      $\theta_{13}$ (NO) & 0.150  & 1.5\% \\ 
+      $\theta_{13}$ (IO) & 0.151  & 1.5\% \\ \hline
+      $\Delta m^2_{21}$ & 7.39$\times10^{-5}$~eV$^2$ & 2.8\% \\ \hline
+      $\Delta m^2_{32}$ (NO) & 2.451$\times10^{-3}$~eV$^2$ &  1.3\% \\
+      $\Delta m^2_{32}$ (IO) & -2.512$\times10^{-3}$~eV$^2$ &  1.3\% \\
+      \hline
+      $\rho$ & 2.848 g cm$^{-3}$ & 2\% \\
+      \hline
+    \end{tabular}
+    \caption{Central value and relative uncertainty of neutrino oscillation parameters from a global fit~\cite{Esteban:2018azc,nufitweb} to neutrino oscillation data. The matter density is taken from Ref.~\cite{Roe:2017zdw}. Because the probability distributions are somewhat non-Gaussian (particularly for $\theta_{23}$), the relative uncertainty is computed using 1/6 of the 3$\sigma$ allowed range from the fit, rather than 1/2 of the 1$\sigma$ range. For $\theta_{23}$, $\theta_{13}$, and $\Delta m^2_{31}$, the best-fit values and uncertainties depend on whether normal mass ordering (NO) or inverted mass ordering (IO) is assumed.}
+    \label{tab:oscpar_nufit}
+\end{table}
+Oscillation sensitivities are obtained by simultaneously fitting the \numutonumu, $\bar{\nu}_\mu \rightarrow \bar{\nu}_\mu$, \numutonue, and $\bar{\nu}_\mu \rightarrow \bar{\nu}_e$ FD spectra along with the $\nu_{\mu}$ FHC and $\bar{\nu}_{\mu}$ RHC samples from the ND. In the studies, all oscillation parameters shown in Table~\ref{tab:oscpar_nufit} are allowed to vary. Gaussian penalty terms (taken from Table~\ref{tab:oscpar_nufit}) are applied to $\theta_{12}$ and \dm{12} and the matter density, $\rho$, of the Earth along the DUNE baseline~\cite{Roe:2017zdw}. Studies presented in this work include a Gaussian penalty term on $\theta_{13}$ (also taken from Table~\ref{tab:oscpar_nufit}), which is precisely measured by experiments sensitive to reactor antineutrino disappearance~\cite{Abe:2014bwa,Adey:2018zwh,Bak:2018ydk}\addcite. The remaining parameters, \sinst{23}, $\Delta m^{2}_{32}$, and \deltacp are allowed to vary freely, with no penalty term. Note that the penalty terms are treated as uncorrelated with each other, or other parameters, which is a simplification.
 
-Flux, cross section, and FD detector parameters are allowed to vary in the fit, but constrained by a penalty term proportional to the pre-fit uncertainty. ND detector parameters are not allowed to vary in the fit, but their effect is included via a covariance matrix based on the shape difference between ND prediction and the ``data'' (which comes from the simulation in this sensitivity study). The covariance matrix is constructed with a throwing technique. For each ``throw'', all ND energy scale, resolution, and acceptance parameters are simultaneously thrown according to their respective uncertainties, and the modified prediction is produced by varying the relevant quantities away from the nominal prediction according to the thrown parameter values. The bin-to-bin covariance is determined by comparing the resulting spectra with the nominal prediction, in the same binning as is used in the oscillation sensitivity analysis. This choice protects against overconstraining that could occur given the limitations of the parameterized ND reconstruction described in Section~\ref{sec:nd} taken together with the high statistical power at the ND, but is also a simplification.
+Flux, cross section, and FD detector parameters are allowed to vary in the fit, but are constrained by a penalty term proportional to the pre-fit uncertainty. ND detector parameters are not allowed to vary in the fit, but their effect is included via a covariance matrix based on the shape difference between ND prediction and the ``data'' (which comes from the simulation in this sensitivity study). The covariance matrix is constructed with a throwing technique. For each ``throw'', all ND energy scale, resolution, and acceptance parameters are simultaneously thrown according to their respective uncertainties, and the modified prediction is produced by varying the relevant quantities away from the nominal prediction according to the thrown parameter values. The bin-to-bin covariance is determined by comparing the resulting spectra with the nominal prediction, in the same binning as is used in the oscillation sensitivity analysis.
 
 The compatibility of a particular oscillation hypothesis with both ND and FD data is evaluated using a negative log-likelihood ratio, which converges to a $\chi^{2}$ at high-statistics~\cite{Tanabashi:2018oca}:
 \begin{equation}
@@ -72,7 +91,6 @@ where $\vec{\vartheta}$ and $\vec{x}$ are the vector of oscillation parameter an
     $|\Delta m^{2}_{32}|$ ($\times 10^{-3}$ eV$^{2}$) & Uniform & $|[2.3;2.7]|$ \\
     \deltacp ($\pi$) & Uniform & [-1;1] \\
     $\theta_{13}$ & Gaussian & NuFIT 4.0 \\
-    & Uniform & [0.13; 0.2] \\
     \hline
   \end{tabular}
   \caption{Treatment of the oscillation parameters for the simulated data set studies. Note that for some studies $\theta_{13}$ has a Gaussian penalty term applied based on the NuFIT 4.0 value, and for others it is thrown uniformly within a range determined from the NuFIT 4.0 3$\sigma$ allowed range.}
