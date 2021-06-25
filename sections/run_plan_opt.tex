@@ -13,7 +13,7 @@ In previous DUNE sensitivity studies~\cite{Abi:2020qib}, equal running times in 
 
 Figure~\ref{fig:run_opt_cpv} shows DUNE's Asimov sensitivity to CPV for a total 100 kt-MW-yr far detector exposure, with different fractions of FHC and RHC running, at the NuFIT 4.0 best fit value in both NO and IO (see Table~\ref{tab:oscpar_nufit}), shown with and without a penalty on $\theta_{13}$ applied. For each point tested, all oscillation and nuisance parameters are allowed to vary, and three fits are carried out, two where \deltacp is set to the CP-conserving values $\deltacp = 0$ and $\deltacp = \pm\pi$, the minimum of which is the CP-conserving best-fit value, and another where \deltacp is allowed to vary. The difference in the best-fit $\chi^{2}$ values is calculated:
 \begin{equation}
-  \Delta\chi^{2}_{\mathrm{CPV}} = \min\left\{\chi^{2}_{\deltacp = 0},\chi^{2}_{\deltacp = \pm\pi}\right\} - \chi^{2}_{\mathrm{CPV}},
+  \dchisqCPV = \min\left\{\chi^{2}_{\deltacp = 0},\chi^{2}_{\deltacp = \pm\pi}\right\} - \chi^{2}_{\mathrm{CPV}},
   \label{eq:cpv_chi2}
 \end{equation}
 \noindent and the square root of the difference is  used as the figure of merit on the y-axis in Figure~\ref{fig:run_opt_cpv}. It should be noted that there are some caveats associated with this figure of merit, which are discussed in Section~\ref{sec:cp_sens}. A 100 kt-MW-yr exposure is shown as it was identified in Ref~\cite{Abi:2020qib} as the exposure at which DUNE's median CPV significance exceeds 3$\sigma$ at $\deltacp = \pm\pi/2$, an important milestone in DUNE's physics program (with equal beam mode running). 
@@ -34,7 +34,7 @@ For regions of phase space where the octant degeneracy does not affect the resul
 \end{figure*}
 Figure~\ref{fig:run_opt_mh} shows DUNE's Asimov sensitivity to the mass ordering for a total 24 kt-MW-yr far detector exposure, with different fractions of FHC and RHC running, and the same four true oscillation parameter sets. A 24 kt-MW-yr exposure is used in Figure~\ref{fig:run_opt_mh} as it is around the exposure at which DUNE's median mass ordering significance exceeds 5$\sigma$ for some vales of \deltacp~\cite{Abi:2020qib}. For each point tested, all oscillation and nuisance parameters are allowed to vary, and two fits are carried out, one using each ordering. The difference in the best-fit $\chi^{2}$ values is calculated:
 \begin{equation}
-  \Delta\chi^{2}_{\mathrm{MO}} = \chi^{2}_{\mathrm{IO}} - \chi^{2}_{\mathrm{NO}},
+  \dchisqMO = \chi^{2}_{\mathrm{IO}} - \chi^{2}_{\mathrm{NO}},
   \label{eq:mh_chi2}
 \end{equation}
 \noindent and the square root of the difference is used as the figure of merit on the y-axis in Figure~\ref{fig:run_opt_mh}. It should be noted that there are some caveats associated with this figure of merit, which are discussed in Section~\ref{sec:mh_sens}. 
